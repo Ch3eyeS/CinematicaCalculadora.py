@@ -1,3 +1,6 @@
+# encoding: utf-8
+# encoding: iso-8859-1
+# encoding: win-1252
 from functools import partial
 import tkinter as tk
 from tkinter import *
@@ -19,7 +22,7 @@ class cmru(tk.Tk):
         janela.resizable(width=False, height=False)
         janela['bg'] = '#111111'
         janela.title('Calculadora de Movimentos - Cinemática')
-        self.tit = Label(janela, text="Calculadora de Movimento Retílineo Uniforme", bg = bgp)
+        self.tit = Label(janela, text=u"Calculadora de Movimento Retilíneo Uniforme", bg = bgp)
         self.created = Label(janela, text = 'Created by - Carlos Daniel:', bg = bgp)
         self.created2 = Label(janela, text = 'Desenvolvido em Python', bg = bgp)
         self.tit['font'] = ('Arial Black', '20', 'bold')
@@ -268,7 +271,7 @@ class cmru(tk.Tk):
             y = [(self.s0+(self.v*i)) for i in x]
             gr.grid(True)
             gr.plot(x, y)
-            gr.set_title('Gráfico das Posições em Função do Tempo - MRU')
+            gr.set_title(u'Gráfico das Posições em Função do Tempo - MRU')
             gr.set_xlabel('X Tempo')
             gr.set_ylabel('Y Posição')
             self.canvas = FigureCanvasTkAgg(f, master=janela)
@@ -286,7 +289,7 @@ class cmru(tk.Tk):
             y = [(self.s0+(self.v0*i)+((self.a/2)*(i**2))) for i in x]
             gr.grid(True)
             gr.plot(x, y)
-            gr.set_title('Gráfico das Posições em Função do Tempo - MRUV')
+            gr.set_title(u'Gráfico das Posições em Função do Tempo - MRUV')
             gr.set_xlabel('X Tempo')
             gr.set_ylabel('Y Posição')
             self.canvas = FigureCanvasTkAgg(f, master=janela)
